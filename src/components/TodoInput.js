@@ -2,20 +2,9 @@ import React, { useEffect, useState } from "react";
 
 export default function TodoInput({ addTodo }) {
 	const [todoInput, setTodoInput] = useState("");
-	useEffect(() => {
-		// console.log("text", todoInput);
-	}, [todoInput]);
-
 	const submit = () => {
-		console.log("submit called");
 		addTodo(todoInput)
-// 		setTodos((old) => [
-// 
-// 			...old,
-// 			{ text: todoInput, completed: false, deleted: false },
-// 		]);
 	};
-
 	return (
 		<div>
 			<input
