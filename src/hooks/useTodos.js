@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function useTodos() {
 	const [todos, setTodos] = useState([]);
-	
+
 	const addTodo = (text) => {
 		setTodos((old) => [
 			...old,
@@ -23,7 +23,17 @@ export default function useTodos() {
 				return out;
 			}
 		});
-	};	
+	};
+	const editTodo = (id, text) => {
+		setTodos((old) => {
+			const index = old.findIndex((i) => i.id == id);
+			if (index != -1) {
+				let out = [...old];
+				out[index].text = text;
+				return out;
+			}
+		});
+	};
 	const undeleteTodo = (id) => {
 		setTodos((old) => {
 			const index = old.findIndex((i) => i.id == id);
@@ -55,14 +65,13 @@ export default function useTodos() {
 		});
 	};
 
-	
 	return {
 		todos,
 		addTodo,
 		deleteTodo,
+		editTodo,
 		undeleteTodo,
 		completeTodo,
 		uncompleteTodo,
-
 	};
 }

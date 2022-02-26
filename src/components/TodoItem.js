@@ -3,18 +3,17 @@ import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";
 import { AiFillDelete } from "react-icons/ai";
 import { MdRestoreFromTrash } from "react-icons/md";
 import { IconContext } from "react-icons";
-
+import EditableText from "./EditableText";
 export default function TodoItem({
 	todo,
 	deleteTodo,
 	undeleteTodo,
 	completeTodo,
 	uncompleteTodo,
+	editTodo,
 }) {
 	return (
-		<IconContext.Provider
-			value={{ style: { fontSize: "20px" } }}
-		>
+		<IconContext.Provider value={{ style: { fontSize: "20px" } }}>
 			<div className="todo-list-item">
 				<button
 					className="btn-icon btn-icon-check"
@@ -33,17 +32,9 @@ export default function TodoItem({
 					)}
 				</button>
 
-				<p
-				className="todo-text"
-					// style={{
-
-					// 	flex: 1,
-					// 	display: "flex",
-					// 	alignSelf: "flex-start",
-					// }}
-				>
-					{todo.text}
-				</p>
+				<EditableText
+				{...{todo, editTodo}}
+				/>
 
 				<button
 					className="btn-icon btn-icon-delete"

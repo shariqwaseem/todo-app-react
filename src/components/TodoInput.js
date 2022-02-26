@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-export default function TodoInput({ addTodo }) {
+export default function TodoInput({ addTodo, setNewTodoAdded }) {
 	const [todoInput, setTodoInput] = useState("");
 	const submit = () => {
 		if (todoInput.trim() != "") {
 			addTodo(todoInput.trim());
 		}
 		setTodoInput("");
+		setNewTodoAdded(old=>!old)
 	};
 	return (
 		<div className="input-and-submit">
 			<input
+			placeholder="Enter a todo..."
 			className="text-field"
 				value={todoInput}
 				onChange={(e) => {
@@ -22,7 +24,9 @@ export default function TodoInput({ addTodo }) {
 					}
 				}}
 			></input>
-			<button onClick={submit}>Submit</button>
+			<button 
+			className="btn-submit"
+			onClick={submit}>Submit</button>
 		</div>
 	);
 }

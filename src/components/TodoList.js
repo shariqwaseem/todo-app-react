@@ -10,16 +10,19 @@ export default function TodoList() {
 		undeleteTodo,
 		completeTodo,
 		uncompleteTodo,
+		editTodo,
 	} = useTodos();
-
+	const [newTodoAdded, setNewTodoAdded] = useState(false)
 	return (
 		<div className="todo-list-container">
-			<p>Todolist</p>
-			<TodoInput {...{ addTodo }} />
+			<p className="heading-text">Todos</p>
+			<TodoInput {...{ addTodo, setNewTodoAdded }} />
 			<TodosDisplay
 				{...{
 					todos,
+					newTodoAdded,
 					deleteTodo,
+					editTodo,
 					undeleteTodo,
 					completeTodo,
 					uncompleteTodo,
