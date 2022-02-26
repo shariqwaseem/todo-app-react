@@ -1,38 +1,85 @@
 .App {
   /*text-align: center;*/
+  min-width: 320px;
+  border: 1px solid blue;
+  /*max-width:400px;*/
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+  }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 600px) {
+  .App {
+    max-width: 450px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-list-container {
   display: flex;
   flex-direction: column;
-  /*align-items: center;*/
-  /*justify-content: center;*/
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 3px solid orange;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-and-submit {
+  flex-direction: row;
+  border: 1px solid blue;
+  flex: 1;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.text-field {
+  flex: 1;
+  display: flex;
+  height: 30px;
+  font-size: 24px;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.todo-list-item {
+  flex-direction: row;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  border: 1px solid blue;
+  justify-content: space-between;
+}
+.todo-text{
+  display:flex;
+  flex:1;
+}
+.btn-icon {
+  background-color: transparent; 
+  border: none; 
+  padding: 6px 10px; 
+  border-radius: 4px;
+  font-size: 16px; 
+  cursor: pointer;
+}
+
+.btn-icon-check {
+  color: #074080; 
+}
+.btn-icon-delete {
+  color: black;
+}
+@media (max-width: 700px) {
+  .todo-list-container {
+    /*text-align: center;*/
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.filter-buttons-container {
+  flex-direction: row;
 }

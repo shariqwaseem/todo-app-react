@@ -24,10 +24,12 @@ export default function TodosDisplay({
 		setFilter(filteredStates.deleted);
 	};
 	return (
-		<div>
-			<button onClick={showUndone}>Todos</button>
-			<button onClick={showCompleted}>Completed</button>
-			<button onClick={showDeleted}>Deleted</button>
+		<div className="todo-display-container">
+			<div className="filter-buttons-container">
+				<button onClick={showUndone}>Todos</button>
+				<button onClick={showCompleted}>Completed</button>
+				<button onClick={showDeleted}>Deleted</button>
+			</div>
 
 			{todos
 				?.reduce((arr, item) => {

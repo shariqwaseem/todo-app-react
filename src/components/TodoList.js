@@ -9,11 +9,11 @@ export default function TodoList() {
 		deleteTodo,
 		undeleteTodo,
 		completeTodo,
-		uncompleteTodo
+		uncompleteTodo,
 	} = useTodos();
 
 	return (
-		<div>
+		<div className="todo-list-container">
 			<p>Todolist</p>
 			<TodoInput {...{ addTodo }} />
 			<TodosDisplay
@@ -22,7 +22,7 @@ export default function TodoList() {
 					deleteTodo,
 					undeleteTodo,
 					completeTodo,
-					uncompleteTodo
+					uncompleteTodo,
 				}}
 			/>
 		</div>
