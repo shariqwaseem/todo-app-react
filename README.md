@@ -23,6 +23,6 @@ Download dependencies and run:
 - Mark a todo as done/undone or delete/undelete it.
 
 
-## Authors
+## Author
 - Shariq Waseem – ([LinkedIn](https://www.linkedin.com/in/shariq-waseem-6451831a2/), [Github](https://www.github.com/shariqwaseem))
 
